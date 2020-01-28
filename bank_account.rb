@@ -14,3 +14,14 @@ class BankAccount
     @balance -= amount
   end
 end
+
+class InteresBearingAccount < BankAccount
+  def initialize(owner, rate)
+    super(owner)
+    @rate = rate
+  end
+
+  def deposit_interest
+    @balance += @rate * @balance
+  end
+end
